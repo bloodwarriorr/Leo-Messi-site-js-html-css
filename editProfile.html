@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="flex.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="about.css">
+  <script defer src="/js/israel-cities.js"></script>
+  <script src="/js/function.js"></script>
+  <script src="/js/users.js"></script>
+  <script defer src="js/main.js"></script>
+  <title>EditProfile</title>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+  <nav class="navbar navbar-success navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span id="WhiteHam" class="icon-bar"></span>
+          <span id="WhiteHam" class="icon-bar"></span>
+          <span id="WhiteHam" class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">The Messi Site</span>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="ShoppingCartModal" data-toggle="modal" data-target="#ShoppingCartModal">Cart<span class="badge bg-success" id="cart-count">0</span></a></li>
+          <li><a href="shop.html">The Messi Store</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html" id="ifUserIsLoggedIn">Login</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About</a></li>
+              <li><a href="fcb.html">FCB</a></li>
+              <li><a href="media.html">Media</a></li>
+              <li><a href="survey.html">Survey</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container moveHeadCardDownAbit">
+    <div id="OpaCity" class="jumbotron">
+      <form id="register_form_edit">
+        <div class="input-group">
+          <div class="col-m-3">
+            <label for="username" style="display: none;">User Name</label>
+            <input type="text" name="user_name" id="edit_user_name" maxlength="60" minlength="1" 
+              class="form-control" style="display: none;">
+              
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="col-m-3">
+            <label for="Password">Password:</label>
+            <input type="password" class="form-control" required id="edit_user_password" minlength="7" maxlength="12">
+            <small class="erorstylep"></small>
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="col-m-3">
+            <label for="Password">Confirm Password:</label>
+            <input type="password" class="form-control" required id="edit_user_password_confirm" minlength="7"
+              maxlength="12">
+              <small class="erorstylep"></small>
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="col-m-3">
+            <label>Image:</label>
+            <input type="file" id="user_img" name="img" accept="image/jpeg,image/jpg" data-image="image" required>
+            <img id="user_img_register" src="" alt="" width="140" height="140" class="img-circle dontShowImage">
+            
+
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="col-m-3">
+            <label for="First Name">First Name:</label>
+            <input type="text" id="edit_user_first_name" class="form-control" required>
+            <small class="erorstylep"></small>
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="col-m-3">
+            <label for="Last Name">Last Name:</label>
+            <input type="text" id="edit_user_last_name" class="form-control" required>
+            <small class="erorstylep"></small>
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="col-m-3">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" required id="edit_user_email">
+            <small class="erorstylep"></small>
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="col-m-3">
+            <label for="birthday">Birth Date:</label>
+            <input type="date" id="edit_user_birthday" name="birthday" required min="1922-01-01" max="2020-01-01">
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="col-m-3">
+            <label for="city">Select City:</label>
+            <input id="edit_city" placeholder="הזן עיר" list="cities" required />
+            <datalist id="cities">
+            </datalist>
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="col-m-3">
+            <label for="street">Select street:</label>
+            <input id="edit_streets" name="street_name" type="text" required />
+            <small class="erorstylep"></small>
+
+          </div>
+        </div>
+        <div class="input-group">
+          <div class="col-m-3">
+            <label for="street number">Select street number:</label>
+            <input id="edit_user_street_number" type="number" min="0" required />
+
+          </div>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <br><br><br>
+
+  <!-- Footer -->
+  <footer class="text-center ">
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br>
+    <p>@ All Rights Reserved - Kenar Ben Shitrit</p>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      // Initialize Tooltip
+      $('[data-toggle="tooltip"]').tooltip();
+
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    })
+  </script>
+</body>
+
+</html>

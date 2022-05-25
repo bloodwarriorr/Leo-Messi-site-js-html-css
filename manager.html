@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Manager Profile</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="/js/product.js"></script>
+	<script src="/js/israel-cities.js"></script>
+	<script src="/js/function.js"></script>
+	<script src="/js/users.js"></script>
+	<script defer src="js/main.js"></script>
+	<link rel="stylesheet" href="manager_profile.css">
+	<link rel="stylesheet" href="flex.css">
+	<link rel="stylesheet" href="about.css">
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+	<nav class="navbar  navbar-success navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span id="WhiteHam" class="icon-bar"></span>
+					<span id="WhiteHam" class="icon-bar"></span>
+					<span id="WhiteHam" class="icon-bar"></span>
+				</button>
+				<span class="navbar-brand">The Messi Site</span>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="ShoppingCartModal" data-toggle="modal" data-target="#ShoppingCartModal">Cart<span class="badge bg-success" id="cart-count">0</span></a></li>
+					<li><a href="shop.html">The Messi Store</a></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
+					<li><a href="register.html">Register</a></li>
+					<li><a href="login.html" id="ifUserIsLoggedIn">Login</a></li>
+					<li><a href="contactus.html">Contact Us</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+							<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="about.html">About</a></li>
+							<li><a href="fcb.html">FCB</a></li>
+							<li><a href="media.html">Media</a></li>
+							<li><a href="survey.html">Survey</a> </li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="table-responsive">
+			<div class="table-wrapper">
+				<div class="table-title">
+					<div class="row">
+						<div class="col-xs-6">
+							<h2>נהל <b>משתמשים</b></h2>
+						</div>
+						<button class="btn btn-danger" id="admin_logout">התנתק</button>
+					</div>
+				</div>
+				<table class="table table-striped table-hover ">
+
+					<thead>
+						<tr>
+							<th>
+								<!-- <span class="custom-checkbox">
+									<input type="checkbox" id="selectAll">
+									<label for="selectAll"></label>
+								</span> -->
+							</th>
+
+							<th>שם משתמש</th>
+							<th>כתובת מייל</th>
+							<th>סיסמא</th>
+							<th>שם פרטי</th>
+							<th>שם משפחה</th>
+							<th>תאריך לידה</th>
+							<th>עיר</th>
+							<th>רחוב</th>
+							<th>מספר רחוב</th>
+
+						</tr>
+					</thead>
+
+					<tbody id="user_details_manager">
+
+
+
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!-- Edit Modal HTML -->
+	<!-- Edit Modal HTML -->
+	<div id="editEmployeeModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form>
+					<div class="modal-header">
+						<h4 class="modal-title">ערוך משתמש </h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label>כתובת מייל</label>
+							<input type="email" class="form-control" required id="edit_user_email">
+						</div>
+						<div class="form-group">
+							<label>סיסמא</label>
+							<input type="password" class="form-control" required id="edit_user_password" minlength="7"
+								maxlength="12">
+						</div>
+						<div class="form-group">
+							<label>אימות סיסמא</label>
+							<input type="password" class="form-control" required id="edit_user_password_confirm"
+								minlength="7" maxlength="12">
+						</div>
+						<div class="form-group">
+							<label>שם פרטי</label>
+							<input type="text" id="edit_user_first_name" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>שם משפחה</label>
+							<input type="text" id="edit_user_last_name" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label> תאריך לידה </label>
+							<input type="date" id="edit_user_birthday" name="birthday" min="1902-01-01" max="2011-08-12" class="form-control">
+						</div>
+						<div class="form-group">
+							<label> עיר </label>
+							<input id="edit_city" class="form-control" placeholder="הזן עיר" list="cities" required />
+							<datalist id="cities">
+							</datalist>
+						</div>
+						<div class="form-group">
+							<label> רחוב </label>
+							<input id="edit_streets" class="form-control" name="street_name" type="text" required />
+						</div>
+						<div class="form-group">
+							<label> מספר רחוב </label>
+							<input id="edit_user_street_number" class="form-control" type="number" min="0" required />
+						</div>
+						<div class="form-group">
+							<label> תמונה </label>
+							<input type="file" id="user_img" name="img" accept=".jpg, .jpeg" data-image="image"
+								required>
+							<img id="user_img_register" src="" alt="" class="img-circle dontShowImage" width="140" height="140">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+						<input type="submit" id="editEmployeebutton" class="btn btn-info" value="Save"
+							onclick="EditUserDetails()">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Delete Modal HTML -->
+	<div id="deleteEmployeeModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form>
+					<div class="modal-header">
+						<h4 class="modal-title"> מחק משתמש</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<p>אתה בטוח שאתה למחוק את המשתמש?</p>
+						<p class="text-warning"><small>פעולה זו לא ניתנת לשחזור</small></p>
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="בטל">
+						<input id="delete_user" type="submit" class="btn btn-danger" value="מחק" onclick="removeItemOnClick()">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="container">
+		<div class="table-responsive">
+			<div class="table-wrapper">
+				<div class="table-title">
+					<div class="row">
+						<div class="col-xs-6">
+							<h2>נהל <b>מוצרים</b></h2>
+						</div>
+						<button class="btn btn-danger" data-toggle="modal" href="#AddProductModal" id="Add-Product">הוסף מוצר</button>
+					</div>
+				</div>
+				<table class="table table-striped table-hover ">
+
+					<thead>
+						<tr>
+							<th>
+								
+							</th>
+
+							<th>מק"ט</th>
+							<th>שם המוצר</th>
+							<th>מחיר</th>
+							<th>מחיר מבצע </th>
+							<th> קטגוריה</th>
+							<th>כמות </th>
+							
+
+						</tr>
+					</thead>
+
+					<tbody id="Shop-products">
+
+
+
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+		<!-- Edit Modal HTML -->
+	<!-- Edit Modal HTML -->
+	<div id="editProductModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form>
+					<div class="modal-header">
+						<h4 class="modal-title">ערוך מוצר </h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label> מק"ט</label>
+							<input type="text" class="form-control" required id="edit_product_id">
+						</div>
+						<div class="form-group">
+							<label>שם מוצר</label>
+							<input type="text" class="form-control" required id="edit_product_name" 
+								>
+						</div>
+						<div class="form-group">
+							<label> מחיר</label>
+							<input type="number" class="form-control" step="0.1" required id="edit_product_full_price"
+								 >
+						</div>
+						<div class="form-group">
+							<label>מחיר מבצע </label>
+							<input type="number" id="edit_product_sale_price" step="0.1" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label> תמונה </label>
+							<input type="file" id="Product_img" name="img" accept=".jpg, .jpeg" data-image="image"
+								required>
+							<img id="edit_product_img" src="" alt="" class="img-circle dontShowImage" width="140" height="140">
+						</div>
+						<div class="form-group">
+							<label>פירוט</label>
+							<input type="text" id="edit_product_description" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label> קטגוריה </label>
+							<select class="form-control" id="edit_product_category">
+								<option>shirts</option>
+								<option>jacket</option>
+								<option>pants</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label> מחיר כללי </label>
+							<input id="edit_total_price" class="form-control" name="" step="0.1" type="number" required />
+						</div>
+						<div class="form-group">
+							<label> כמות  </label>
+							<input id="edit_product_amount" class="form-control" type="number" min="0" required />
+						</div>
+						
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+						<input type="submit" id="editProductbutton" class="btn btn-info" value="Save"
+							onclick="EditProductDetails()">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+<!-- Delete Modal HTML -->
+<div id="deleteProductModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form>
+				<div class="modal-header">
+					<h4 class="modal-title"> מחק מוצר</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p>אתה בטוח שאתה למחוק את המוצר?</p>
+					<p class="text-warning"><small>פעולה זו לא ניתנת לשחזור</small></p>
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="בטל">
+					<input id="delete_product" type="submit" class="btn btn-danger" value="מחק" onclick="RemoveProductOnClick()">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+
+	<!-- ADD Modal HTML -->
+	<!-- ADD Modal HTML -->
+	<div id="AddProductModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form onsubmit="AddProduct()">
+					<div class="modal-header">
+						<h4 class="modal-title">הוסף מוצר </h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label> מק"ט</label>
+							<input type="text" class="form-control" required id="Add_product_id">
+						</div>
+						<div class="form-group">
+							<label>שם מוצר</label>
+							<input type="text" class="form-control" required id="Add_product_name" 
+								>
+						</div>
+						<div class="form-group">
+							<label> מחיר</label>
+							<input type="number" class="form-control" step="0.1" required id="Add_product_full_price"
+								 >
+						</div>
+						<div class="form-group">
+							<label>מחיר מבצע </label>
+							<input type="number" id="Add_product_sale_price" class="form-control" step="0.1" required>
+						</div>
+						<div class="form-group">
+							<label> תמונה </label>
+							<input type="file" id="Add-Product_img" name="img" accept=".jpg, .jpeg" data-image="image"
+								required>
+							<img id="Add_product_img" src="" alt="" class="img-circle dontShowImage" width="140" height="140" required>
+						</div>
+						<div class="form-group">
+							<label>פירוט</label>
+							<input type="text" id="Add_product_description" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label> קטגוריה </label>
+							<select class="form-control" id="Add_product_category">
+								<option>shirts</option>
+								<option>jacket</option>
+								<option>pants</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label> מחיר כללי </label>
+							<input id="Add_total_price" class="form-control" name="" type="number" step="0.1" required />
+						</div>
+						<div class="form-group">
+							<label> כמות  </label>
+							<input id="Add_product_amount" class="form-control" type="number" min="0" required />
+						</div>
+						
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+						<input type="submit" id="AddProductbutton" class="btn btn-info" value="Save"
+							>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<!-- Shopping cart Modal -->
+<div class="modal fade" id="ShoppingCartModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4>Shopping cart</h4>
+        </div>
+        <div class="modal-body">
+          <form role="form">
+         <div id="ShoppingCart">
+
+         </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+			<button type="submit" class="btn btn-success btn-default pull-left" onclick="BuyItems()">
+				<span class="glyphicon glyphicon-ok-circle"></span> Buy Items
+			  </button>
+          <button type="submit" class="btn btn-danger btn-default pull-left" id="ClearCart" onclick="ClearCart()">
+            <span class="glyphicon glyphicon-remove"></span> Clear Cart
+          </button>
+          <p>Need <a href="contactus.html">help?</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+	<footer class="text-center ">
+		<a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+			<span class="glyphicon glyphicon-chevron-up"></span>
+		</a><br><br>
+		<p>@ All Rights Reserved - Kenar Ben Shitrit</p>
+	</footer>
+
+	<!-- <script>
+		$(document).ready(function () {
+			// Activate tooltip
+			$('[data-toggle="tooltip"]').tooltip();
+
+			// Select/Deselect checkboxes
+			var checkbox = $('table tbody input[type="checkbox"]');
+			$("#selectAll").click(function () {
+				if (this.checked) {
+					checkbox.each(function () {
+						this.checked = true;
+					});
+				} else {
+					checkbox.each(function () {
+						this.checked = false;
+					});
+				}
+			});
+			checkbox.click(function () {
+				if (!this.checked) {
+					$("#selectAll").prop("checked", false);
+				}
+			});
+		});
+	</script> -->
+
+	<script>
+		$(document).ready(function () {
+			// Initialize Tooltip
+			$('[data-toggle="tooltip"]').tooltip();
+
+			// Add smooth scrolling to all links in navbar + footer link
+			$(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+				// Make sure this.hash has a value before overriding default behavior
+				if (this.hash !== "") {
+
+					// Prevent default anchor click behavior
+					event.preventDefault();
+
+					// Store hash
+					var hash = this.hash;
+
+					// Using jQuery's animate() method to add smooth page scroll
+					// The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top
+					}, 900, function () {
+
+						// Add hash (#) to URL when done scrolling (default click behavior)
+						window.location.hash = hash;
+					});
+				} // End if
+			});
+		})
+	</script>
+
+</body>
+
+</html>

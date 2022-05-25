@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messi's Shop</title>
+    <link rel="stylesheet" href="shopStyle.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="/js/listOfProducts.js"></script>
+    <script src="/js/israel-cities.js"></script>
+<script src="/js/function.js"></script>
+<script src="/js/users.js"></script>
+<script defer src="js/main.js"></script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav class="navbar  navbar-success navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span id="WhiteHam" class="icon-bar"></span>
+              <span id="WhiteHam" class="icon-bar"></span>
+              <span id="WhiteHam" class="icon-bar"></span>                        
+            </button>
+            <span class="navbar-brand">The Messi Site</span>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="ShoppingCartModal" data-toggle="modal" data-target="#ShoppingCartModal">Cart<span class="badge bg-success" id="cart-count">0</span></a></li>
+              <li><a href="shop.html">The Messi Store</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="register.html">Register</a></li>
+              <li><a href="login.html" id="ifUserIsLoggedIn">Login</a></li>
+              <li><a href="contactus.html">Contact Us</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="fcb.html">FCB</a></li>
+                  <li><a href="media.html">Media</a></li> 
+                  <li><a href="survey.html">Survey</a> </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+     
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      
+    
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="/images/leonew/messitrophy.jpeg"  width="1200" height="700">
+            <div class="carousel-caption">
+              <h3>Welcome To the Messi Shop!</h3>
+              <p>We Wish You Pleasent Time!</p>
+            </div>      
+          </div>
+        </div>
+    
+        
+    
+    
+    <!-- Container (The new Section) -->
+    <div id="band" class="container text-center">
+      <h3>On Sale</h3>
+      <p><em>Check Out The Items On Sale!</em></p>
+      <br>
+      <div class="row">
+        <div class="col-sm-4">
+          <p class="text-center"><strong>Messi Argentine Shirt</strong></p><br>
+          <a href="#demo" data-toggle="collapse">
+          
+            <img src="/images/leonew/messishirt10.jpg" id="LogoOpacity"class="img-circle person" alt="Random Name" width="255" height="255">
+          </a>
+          <div id="demo" class="collapse">
+            
+            <p>Name:Messi Argentine Shirt</p>
+            <p>Price:349.90</p>
+            <p>SalePrice:<s>349.90</s> <span>279.90</span></p>
+            <p>Descrption:A masterpiece flowing from a football-mad country. This Argentina Home Jersey famous blue stripes display a patchwork pattern that blends together like watercolours. The camo-style design represents the 23 provinces the team\'s players call home. Its soft fabric dries quickly to keep you comfortable.Regular fitRibbed crewneck100% recycled polyester doubleknitSoft, lightweight fabricFootball jersey for Argentina fansMoisture-absorbing AEROREADYRibbed cuffsArgentina woven crestProduct colour: White / Clear BluePersonalisationName & Number - Customise your jersey with the name and number of your favourite Argentina player or even your own name. We can print name in the same style worn by the players.</p>
+            <p>Category:National sports team</p>
+            
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <p class="text-center"><strong>Messi Barca Shirt 21/22</strong></p><br>
+          <a href="#demo2" data-toggle="collapse">
+            <img src="/images/leonew/messibarcashirt.jpg" id="LogoOpacity" class="img-circle person" alt="Random Name" width="255" height="255">
+          </a>
+          <div id="demo2" class="collapse">
+            
+            <p>Name:Messi Braca Shirt Home</p>
+            <p>Price:349.90</p>
+            <p>SalePrice:<s>349.90</s> <span>279.90</span></p>
+            <p>Descrption:The official home jersey of Lionel Messi for the 2020/21 season.
+
+              Branded Nike product. Official FC Barcelona fon</p>
+            <p>Category:Stadium Home team Shirt</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <p class="text-center"><strong>Messi Away Kit</strong></p><br>
+          <a href="#demo3" data-toggle="collapse">
+            <img src="/images/leonew/messiawaykit.jpg" id="LogoOpacity" class="img-circle personSame_Size" alt="Random Name" width="255" height="255">
+          </a>
+          <div id="demo3" class="collapse">
+            
+            <p>Name:Messi Braca Shirt Away</p>
+            <p>Price:279.90</p>
+            <p>SalePrice:<s>279.90</s> <span>229.90</span></p>
+            <p>Descrption:Like other shirts from our Stadium collection, the F.C. Barcelona Shirt pairs replica design details with sweat-wicking fabric to give you a game-ready look inspired by your favourite team.This product is made from 100% recycled polyester fibres.</p>
+            <p>Category:Stadium Away Team Shirt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Container (TOUR Section) -->
+    <div id="tour" class="bg-1">
+      <br>
+      <h4>Check The Stuff</h4>
+      <br>
+   <!-- Section: Sidebar -->
+<section>
+<div id="productFilters">
+  <!-- Section: Filters -->
+  <section>
+
+    <h3>Filters</h3>
+
+    <!-- Section: Condition -->
+    <section class="mb-4">
+
+      <h5 class="font-weight-bold mb-3">Category</h5>
+
+      <div class="form-check pl-0 mb-3">
+      <button class="btn category" id="shirts" data-category='shirts'>Shirts</button>
+      </div>
+      <br>
+      <div class="form-check pl-0 mb-3">
+        <button class="btn category" id="jacket" data-category='jacket'>Jacket</button>
+      </div>
+      <br>
+      <div class="form-check pl-0 mb-3">
+        <button class="btn category" id="pants" data-category='pants'>Pants</button>
+      </div>
+      <br>
+      <div class="form-check pl-0 mb-3 pb-1">
+        <button class="btn category" id="show-all" onclick="location.reload()">ShowAll</button>
+      </div>
+
+    </section class="mb-4">
+    <!-- Section: Condition -->
+    <!-- Section: Price -->
+    <section class="mb-4">
+
+      <h5 class="font-weight-bold mb-3">Price</h5>
+      <div class="form-check pl-0 mb-3">
+        <button class="btn price" id="under249.90" data-low='0' data-high='249.90'>Under 249.90$</button>
+      </div>
+      <br>
+      <div class="form-check pl-0 mb-3">
+         <button class="btn price" id="199-299" data-low='199.90' data-high='299.90'>199.90$-299.90$</button>
+      </div>
+      <br>
+      <div class="form-check pl-0 mb-3">
+        <button class="btn price" id="239-459" data-low='239.90' data-high='459.90'>239.90$-459.90$</button>
+      </div>
+      <br>
+      <div class="form-check pl-0 mb-3">
+        <button class="btn price" id="399-499" data-low='399.90' data-high='499.90'>399.90$-499.90$</button>
+      </div>
+      <br>
+      <div class="form-check pl-0 mb-3">
+        <button class="btn price" id="499above" data-low='499.90' data-high='10000'>499.90$&Above</button>
+      </div>
+
+    </section>
+  </div>
+    <!-- Section: Price -->
+  </section>
+      <div class="container" id="products">
+        
+
+      
+        </div>
+      </div>
+
+      
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">×</button>
+              <h4>About The product</h4>
+            </div>
+            <div class="modal-body">
+              <form role="form">
+             <div id="itemDetails">
+
+             </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                <span class="glyphicon glyphicon-remove"></span> Show Less
+              </button>
+              <p>Need <a href="contactus.html">help?</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Shopping cart Modal -->
+  <div class="modal fade" id="ShoppingCartModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close"  data-dismiss="modal">×</button>
+          <h4>Shopping cart</h4>
+        </div>
+        <div class="modal-body">
+          <form role="form">
+         <div id="ShoppingCart">
+
+         </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success btn-default pull-left" onclick="BuyItems()">
+            <span class="glyphicon glyphicon-ok-circle"></span> Buy Items
+          </button>
+          <button type="submit" class="btn btn-danger btn-default pull-left" id="ClearCart" onclick="ClearCart()">
+            <span class="glyphicon glyphicon-remove"></span> Clear Cart
+          </button>
+          <p>Need <a href="contactus.html">help?</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Container (Contact Section) -->
+<div id="contact" class="container">
+  
+  <br>
+  <h3 class="text-center">Words from Satisfied Coustomers</h3>  
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">David silva</a></li>
+    <li><a data-toggle="tab" href="#menu1">Jhon kyle</a></li>
+    <li><a data-toggle="tab" href="#menu2">Jack Richer</a></li>
+    <li><a data-toggle="tab" href="#menu3">Diego Hernandez</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h2>David silva</h2>
+      <p>"It was a pleasure to buy Messi's stuff"</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h2>Jhon kyle</h2>
+      <p>"The products are high quality metrial, very nice!"</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h2>Jack Richer</h2>
+      <p>“The best store i have ever visited”</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h2>Diego Hernandez</h2>
+      <p>"Very style and beautifull items, I recommend anyone to shop here!"</p>
+    </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br>
+    <p>@ All Rights Reserved - Kenar Ben Shitrit</p>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      // Initialize Tooltip
+      $('[data-toggle="tooltip"]').tooltip();
+
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    })
+  </script>
+
+</body>
+</html>

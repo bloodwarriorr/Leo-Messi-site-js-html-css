@@ -1,0 +1,53 @@
+body {
+  background-image: url("./images/leomessicopa2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.moveHeadCardDown {
+  margin-top: 150px;
+
+}
+
+.divHeaderAndlitleImage {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.divMessiStats {
+  display: flex;
+  flex-flow: column;
+
+}
+
+.dontShowImage {
+  display: none !important;
+}
+
+.divMessiStats>img {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: black 1px 2px 3px;
+}
+
+.divHeaderAndlitleImage>img {
+  width: 200px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: black 1px 2px 3px;
+}
+
+#OpaCity {
+  opacity: 0.95;
+}
+
+#OpaCity:hover {
+  opacity: 1;
+}

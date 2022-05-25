@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="flex.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="about.css">
+  <script src="/js/israel-cities.js"></script>
+  <script src="/js/function.js"></script>
+  <script src="/js/users.js"></script>
+  <script defer src="js/main.js"></script>
+  <title>contactus</title>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50" class="body-media-query">
+  <nav class="navbar navbar-success navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span id="WhiteHam" class="icon-bar"></span>
+          <span id="WhiteHam" class="icon-bar"></span>
+          <span id="WhiteHam" class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">The Messi Site</span>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="ShoppingCartModal" data-toggle="modal" data-target="#ShoppingCartModal">Cart<span class="badge bg-success" id="cart-count">0</span></a></li>
+          <li><a href="shop.html">The Messi Store</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html" id="ifUserIsLoggedIn">Login</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About</a></li>
+              <li><a href="fcb.html">FCB</a></li>
+              <li><a href="media.html">Media</a></li>
+              <li><a href="survey.html">Survey</a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Container (Contact Section) -->
+  <div class="container moveHeadCardDown">
+    <div id="OpaCity" class="jumbotron">
+      <h3 class="text-center">Contact</h3>
+      <p class="text-center"><em>We love our fans!</em></p>
+      <form method="GET" action="thanks.html">
+        <div class="row">
+          <div class="col-md-4">
+            <p>Fan? Drop a note.</p>
+            <p><span class="glyphicon glyphicon-map-marker"></span>Barcelona,Spain</p>
+            <p><span class="glyphicon glyphicon-phone"></span>Phone: +34 93 1515151515</p>
+            <p><span class="glyphicon glyphicon-envelope"></span>Email:JohanCruyff@Barca.com</p>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+              </div>
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+              </div>
+            </div>
+            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"
+              required></textarea>
+            <br>
+            <div class="row">
+              <div class="col-md-12 form-group">
+                <button id="ButtonMarginRight" class="btn pull-right" type="reset">Clear Data</button>
+                <button class="btn pull-right" type="submit">Send</button>
+              </div>
+            </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <br><br><br>
+<!-- Shopping cart Modal -->
+<div class="modal fade" id="ShoppingCartModal" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4>Shopping cart</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+       <div id="ShoppingCart">
+
+       </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-success btn-default pull-left" onclick="BuyItems()">
+          <span class="glyphicon glyphicon-ok-circle"></span> Buy Items
+        </button>
+        <button type="submit" class="btn btn-danger btn-default pull-left" id="ClearCart" onclick="ClearCart()">
+          <span class="glyphicon glyphicon-remove"></span> Clear Cart
+        </button>
+        <p>Need <a href="contactus.html">help?</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<br><br>
+  <!-- Footer -->
+  <footer class="text-center ">
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br>
+    <p>@ All Rights Reserved - Kenar Ben Shitrit</p>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      // Initialize Tooltip
+      $('[data-toggle="tooltip"]').tooltip();
+
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    })
+  </script>
+</body>
+
+</html>

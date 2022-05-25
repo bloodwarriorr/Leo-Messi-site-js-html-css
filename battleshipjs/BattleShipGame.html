@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>battleship</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/function.js"></script>
+<script defer src="js/main.js"></script>
+
+</head>
+<body>
+    <div class="msg"></div>
+    <div class="win"><h1></h1></div>
+<div id="choosemenu">
+<div id="choosegrid">
+    <form action="" class="GridSize">
+        <p>Please select your grid:</p>
+        <input type="radio" id="male" name="game-size" checked="checked"  data-size="10">
+        <label id="first" for="male">10x10</label>
+        <input type="radio" id="female" name="game-size" checked="checked"  data-size="11">
+        <label for="second">11x11</label><br>
+        <input type="radio" id="other"name="game-size" checked="checked"  data-size="12">
+        <label for="third">12x12</label>
+        <input type="radio" id="male" name="game-size" checked="checked" data-size="13">
+        <label for="forth">13x13</label><br>
+        <input type="radio" id="female" name="game-size" checked="checked" data-size="14">
+        <label for="fifth">14x14</label>
+        <input type="radio" id="other" name="game-size" checked="checked" data-size="15">
+        <label for="sixed">15x15</label>
+</div>
+
+<div id="chooseship">
+    <div class="ShipSize">
+    <p>Please choose number of battleship:</p>
+<form action="">
+    <label for="fname">battleship size 2</label>
+    <input type="number" id="" class="subtype" min="0" max="9" value="0"><br><br data-ship="2">
+    <label for="lname">battleship size 3</label>
+    <input type="number" id="" class="subtype" data-ship="3" value="0" min="0" max="9"><br><br>
+    <label for="fname">battleship size 4</label>
+    <input type="number" id="" class="subtype" data-ship="4" value="0" min="0" max="9"><br><br>
+    <label for="lname">battleship size 5</label>
+    <input type="number" id="" class="subtype" data-ship="5" value="0" min="0" max="9"><br><br>
+  </form>
+</div>
+</div>
+<button >Start Game</button>
+<button id="newgame">New Game</button>
+<button id="index">Go back to home page</button>
+</div>
+
+<div id="gameboard">
+
+
+</div>
+<div id="scoreboard">
+    <table>
+        <tr>
+            <td>Sub Type</td>
+            <td>Sub Amount</td>
+        </tr>
+        <tr>
+            <td>Sub-2</td>
+            <td class="Sub-Info"></td>
+        </tr>
+        <tr>
+            <td>Sub-3</td>
+            <td class="Sub-Info"></td>
+        </tr>
+        <tr>
+            <td>Sub-4</td>
+            <td class="Sub-Info"></td>
+        </tr>
+        <tr>
+            <td>Sub-5</td>
+            <td class="Sub-Info"></td>
+        </tr>
+    </table>
+
+</div>
+<audio id="audio-hit" src="../battleshipjs/Audio/hit.wav"></audio>
+    <audio id="audio-sunk" src="../battleshipjs/Audio/sunk.wav"></audio>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="flex.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<script src="/js/israel-cities.js"></script>
+<script src="/js/function.js"></script>
+<script src="/js/users.js"></script>
+<script defer src="js/main.js"></script>
+    <title>survey</title>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50" >
+    <nav class="navbar navbar-success navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span id="WhiteHam" class="icon-bar"></span>
+              <span id="WhiteHam" class="icon-bar"></span>
+              <span id="WhiteHam" class="icon-bar"></span>                         
+            </button>
+            <span class="navbar-brand">The Messi Site</span>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="ShoppingCartModal" data-toggle="modal" data-target="#ShoppingCartModal">Cart<span class="badge bg-success" id="cart-count">0</span></a></li>
+              <li><a href="shop.html">The Messi Store</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="register.html">Register</a></li>
+              <li><a href="login.html" id="ifUserIsLoggedIn" >Login</a></li>
+              <li><a href="contactus.html">Contact Us</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="fcb.html">FCB</a></li>
+                  <li><a href="media.html">Media</a></li> 
+                  <li><a href="survey.html">Survey</a> </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container moveHeadCardDown">
+      <div id="OpaCity" class="jumbotron">
+      <div class="container survey">
+          <div class="divHeaderAndlitleImage">
+        <h1 id="title" class="text-center">Survey</h1>
+        <img src="/images/dec.jpg" alt="Leo">
+      </div>
+      <form id="survey-form" action="thanks.html">
+       <div class="form-row">
+          <div class="col">
+            <label id="name-label">First Name</label>
+            <input id="name" type="name" class="form-control" placeholder="First name" required>
+          </div>
+          <div class="col">
+            <label for="formGroupExampleInput">Last Name</label>
+            <input id="last-name" type="name" class="form-control" placeholder="Last name" required>
+          </div>
+        </div>
+        <br/>
+        <div class="form-group">
+          <label id="email-label">Email Address</label>
+          <input id="email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" required>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label id="number-label">Your Age</label>
+          <input id="number" type="number" min="15" max="125" class="form-control" id="number" placeholder="Age" required>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect2">Who is your Favorite Player</label>
+          <select class="form-control" id="dropdown">
+            <option>Other</option>
+            <option>Diego Maradona</option>
+            <option>Romario</option>
+            <option>Neymar J.R</option>
+            <option>Leo Messi</option>
+            <option>Ronaldinho</option>
+            <option>Cristiano Ronaldo</option>
+          </select>
+        </div>
+        <div class="radiobuttons">
+        <p>Who's Better?</p>
+          <ul style="list-style: none;">
+           <li class="radio"><input name="radio-buttons" value="3"  type="radio" class="userRatings" ><label>Leo Messi</label></li>
+            <li class="radio"><input name="radio-buttons" value="3"  type="radio" class="userRatings" ><label>Cristiano Ronaldo</label></li>
+          </ul>
+        </div>
+       <div>
+        <p >Who was your Favorite coach at FCB?</p>
+        <ul class="checkboxlabel">
+        <li class="checkboxlabel" style="list-style: none;"><label> <input name="prefer" value="1" type="checkbox" class="userRatings">Pep Guardiola</label></li>
+        <li class="checkboxlabel" style="list-style: none;"><label> <input name="prefer" value="1" type="checkbox" class="userRatings">Frank Ricard</label></li>
+        <li class="checkboxlabel" style="list-style: none;"><label> <input name="prefer" value="1" type="checkbox" class="userRatings">Helenio Herrera</label></li>
+        <li class="checkboxlabel" style="list-style: none;"><label> <input name="prefer" value="1" type="checkbox" class="userRatings"> Louis van Gaal</label></li>
+        </ul>
+        </div>
+        <br>
+        <div class="message">
+          <p>What is your favorite Part in Leo Messi Career? share us!</p>
+        <textarea name="comment" id="comments" cols="30" rows="5" placeholder="What would you like to tell us?" optional></textarea>
+        </div>
+        <br/>
+        <div>
+        <button id="submit" type="submit" class="btn btn-secondary" style="float:right">Submit</button>
+    </div>
+     </form>
+    </div>
+    </div>
+    </div>
+    
+    
+<!-- Shopping cart Modal -->
+<div class="modal fade" id="ShoppingCartModal" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4>Shopping cart</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+       <div id="ShoppingCart">
+
+       </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-success btn-default pull-left" onclick="BuyItems()">
+          <span class="glyphicon glyphicon-ok-circle"></span> Buy Items
+        </button>
+        <button type="submit" class="btn btn-danger btn-default pull-left" id="ClearCart" onclick="ClearCart()">
+          <span class="glyphicon glyphicon-remove"></span> Clear Cart
+        </button>
+        <p>Need <a href="contactus.html">help?</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+ <!-- Footer -->
+ <footer class="text-center">
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br>
+    <p>@ All Rights Reserved - Kenar Ben Shitrit</p>
+  </footer>
+  
+  <script>
+  $(document).ready(function(){
+    // Initialize Tooltip
+    $('[data-toggle="tooltip"]').tooltip(); 
+    
+    // Add smooth scrolling to all links in navbar + footer link
+    $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+  
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+  
+        // Prevent default anchor click behavior
+        event.preventDefault();
+  
+        // Store hash
+        var hash = this.hash;
+  
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 900, function(){
+     
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  })
+  </script>
+</body>
+</html>
